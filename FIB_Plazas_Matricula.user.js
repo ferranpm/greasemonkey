@@ -59,8 +59,7 @@ function make_form(asignaturas) {
 }
 
 function setCookie(c_name, value) {
-    var d = new Date();
-    document.cookie = c_name + '=' + value + '; expires=' + (d.getTime() + (10 * 365 * 24 * 60 * 60)) + '; path=/';
+    document.cookie = c_name + '=' + value + '; expires=' + "Tue, 13 Nov 2023 12:34:56 GMT" + '; path=/';
 }
 
 function getCookie(c_name) {
