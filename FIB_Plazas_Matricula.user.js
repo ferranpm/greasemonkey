@@ -59,18 +59,15 @@ function make_form(asignaturas) {
 }
 
 function setCookie(c_name, value) {
-    document.cookie = c_name + '=' + value + '; expires=' + "Tue, 13 Nov 2023 12:34:56 GMT" + '; path=/';
+    document.cookie = c_name + '=' + value + '; expires=' + 'Tue, 13 Nov 2023 12:34:56 GMT' + '; path=/';
 }
 
 function getCookie(c_name) {
-    var i,x,y,ARRcookies=document.cookie.split(";");
-
-    for (i=0;i<ARRcookies.length;i++) {
-        x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-        y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-        x=x.replace(/^\s+|\s+$/g,"");
-        if (x==c_name) {
-            return unescape(y);
-        }
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        var name = cookies[i].substr(0, cookies[i].indexOf('='));
+        var val = cookies[i].substr(cookies[i].indexOf('=') + 1);
+        name = name.replace(/^\s+|\s+$/g,"");
+        if (name == c_name) return unescape(val);
     }
 }
